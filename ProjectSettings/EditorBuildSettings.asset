@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: b8d1f7e10a5c10f4d9982aa7d948c0ef
+  - enabled: 1
+    path: Assets/Scenes/Workroom.unity
+    guid: ac4fab9ed2c486043bc36be72d3c326d
+  - enabled: 1
+    path: Assets/Scenes/Conversation1.unity
+    guid: 45c6aa7fe7638e64cad6243c731558e8
+  - enabled: 1
+    path: Assets/Scenes/Workroom_Potion.unity
+    guid: b1f43fd0214669c4bb31243f7d1a1f4b
+  - enabled: 1
+    path: Assets/Scenes/Conversation2.unity
+    guid: 6bf1284bb75c256428ffb462f75150b5
+  - enabled: 1
+    path: Assets/Scenes/Workroom_Spoide.unity
+    guid: 463f7a32cad2c10408edb42a939ec1f2
+  - enabled: 1
+    path: Assets/Scenes/Conversation3.unity
+    guid: 57ee71cc9a5919449a47fbdad904d4cc
+  m_configObjects: {}
