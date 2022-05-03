@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MapMovePractice : MonoBehaviour
 {
+    /*
     public GameObject targetPosition;
     Vector3 vel = Vector3.zero;
 
@@ -18,4 +19,5 @@ public class MapMovePractice : MonoBehaviour
     {
         transform.position = Vector3.SmoothDamp(gameObject.transform.position, targetPosition.transform.position, ref vel, 0.8f);
     }
+    */
 }
