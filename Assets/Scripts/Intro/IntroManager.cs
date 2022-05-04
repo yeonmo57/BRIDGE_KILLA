@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class IntroManager : MonoBehaviour
 {
+    public IntroText textManager;
     SpriteRenderer sr;
 
     [Header("검은 화면 페이드아웃")]
@@ -26,7 +27,7 @@ public class IntroManager : MonoBehaviour
          while (alphaValue > 0)
          {
             Debug.Log("사라지는 중 .. ");
-            alphaValue -= 0.01f;
+            alphaValue -= 0.0005f;
             yield return new WaitForSeconds(0.001f);
             sr.color = new Color(0, 0, 0, alphaValue);
          }
@@ -36,6 +37,6 @@ public class IntroManager : MonoBehaviour
     {
 
     }
-
-    
+ 
+ 
 }
