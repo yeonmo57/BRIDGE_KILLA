@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class IntroManager : MonoBehaviour
 {
-    public IntroText textManager;
     SpriteRenderer sr;
 
     [Header("검은 화면 페이드아웃")]
