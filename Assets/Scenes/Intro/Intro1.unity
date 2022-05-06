@@ -123,6 +123,59 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &6612248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6612249}
+  - component: {fileID: 6612250}
+  m_Layer: 0
+  m_Name: DialogSystem04
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6612249
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6612248}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 282973191}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6612250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6612248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 660126c8c6d5429438704e38ce70e91f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speaker:
+    imageDialog: {fileID: 712869200}
+    textDialog: {fileID: 1816126815}
+    objectArrow: {fileID: 1245473684}
+  dialogs:
+  - speakerIndex: 0
+    dialogs: "\uC774\uAC74 \uC9C0\uB3C4\uC796\uC544?"
+  - speakerIndex: 0
+    dialogs: "\uB3CC\uC544\uAC00\uC57C \uD560 \uACF3... \uC785\uC2A4?"
+  isAutoStart: 1
 --- !u!1 &31876716
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,8 +200,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 31876716}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.47573233, y: -0.006379959, z: -0.03599995}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 282973191}
@@ -310,7 +363,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &210390010
 MonoBehaviour:
@@ -327,9 +380,11 @@ MonoBehaviour:
   DialogSystem01: {fileID: 2021621474}
   DialogSystem02: {fileID: 1703033353}
   DialogSystem03: {fileID: 31876718}
+  DialogSystem04: {fileID: 6612250}
   pandoraBox: {fileID: 2013702935}
   T_background: {fileID: 1802638352}
   NT_background: {fileID: 997142299}
+  Valhalla: {fileID: 0}
 --- !u!1 &282973190
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,8 +415,9 @@ Transform:
   - {fileID: 2021621475}
   - {fileID: 1703033354}
   - {fileID: 31876717}
+  - {fileID: 6612249}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &672565000
 GameObject:
@@ -420,7 +476,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 64c20256c1517e94ea216d1f66582113, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dc2e50e8228e26c45bfe015dbac87bf7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -959,8 +1015,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1703033352}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.47573233, y: -0.006379959, z: -0.03599995}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 282973191}
@@ -1341,8 +1397,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021621473}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.47573233, y: -0.006379959, z: -0.03599995}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 282973191}

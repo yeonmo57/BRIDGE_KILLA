@@ -3,21 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogTest : MonoBehaviour
+public class IntroTest_1: MonoBehaviour
 {
+    // 다이얼로그 
     [SerializeField]
     private DialogSystem DialogSystem01;
     [SerializeField]
     private DialogSystem DialogSystem02;
     [SerializeField]
     private DialogSystem DialogSystem03;
+    [SerializeField]
+    private DialogSystem DialogSystem04;
+
+    // 오브젝트 
     [Header("판도라의 상자")]
     public GameObject pandoraBox;
     [Header("검은 화면(투명) 페이드인")]
     public GameObject T_background;
     [Header("검은 화면(투명X) 페이드인")]
-    public Image NT_background;
 
+    public Image NT_background;
     Transform tr;
     SpriteRenderer sr;
     float time = 0f;
@@ -37,8 +42,6 @@ public class DialogTest : MonoBehaviour
 
         // 대사 분기 사이에 원하는 행동 추가 가능
         int count = 3;
-
-
         while (count > 0)
         {
             count--;
@@ -51,10 +54,19 @@ public class DialogTest : MonoBehaviour
         //검정 화면 -> 페이드인
         StartCoroutine(NT_FadeCoroutine());
 
+        yield return new WaitForSeconds(2.5f);
+
         // 세번째 대사 분기 시작
         yield return new WaitUntil(() => DialogSystem03.UpdateDialog());
 
+        // 박스 이동
         StartCoroutine(MoveCoroutine());
+        yield return new WaitForSeconds(2.5f);
+
+        Debug.Log("4분기 시작");
+        // 네번째 대사 분기 시작       
+        yield return new WaitUntil(() => DialogSystem04.UpdateDialog());
+        Debug.Log("씬 전환");
 
     }
 
@@ -69,11 +81,10 @@ public class DialogTest : MonoBehaviour
     }
     IEnumerator MoveCoroutine()
     {
-        for (float i = 0; i >= -20f; i -= 0.2f)
+        for (float i = 0; i >= -15.5f; i -= 0.1f)
         {
-            Debug.Log("1초뒤");
             tr.position = new Vector3(i, 0, 0);
-            yield return new WaitForSeconds(0.0001f);
+            yield return new WaitForSeconds(0.01f);
         }
     }
 
@@ -85,7 +96,7 @@ public class DialogTest : MonoBehaviour
         while (alpha.a < 1f)
         {
             time += Time.deltaTime / F_time;
-            alpha.a = Mathf.Lerp(0, 1, time);
+            alpha.a = Mathf.Lerp(0, 3, time);
             NT_background.color = alpha;
             yield return null;
         }
@@ -106,4 +117,6 @@ public class DialogTest : MonoBehaviour
         yield return null;
 
     }
+
+  
 }
