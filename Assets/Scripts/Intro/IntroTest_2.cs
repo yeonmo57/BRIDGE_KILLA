@@ -43,9 +43,6 @@ public class IntroTest_2 : MonoBehaviour
         People = SecondCut.transform.GetChild(0).GetComponent<SpriteRenderer>();
         FrontObject = SecondCut.transform.GetChild(1).GetComponent<SpriteRenderer>();
 
-        People.gameObject.SetActive(false);
-        FrontObject.gameObject.SetActive(false);
-
         StartCoroutine(NT_FadeCoroutine());
 
         // 첫번째 대사 분기 시작
@@ -53,16 +50,10 @@ public class IntroTest_2 : MonoBehaviour
         yield return new WaitUntil(() => DialogSystem01.UpdateDialog());
 
         // 첫번째 컷씬 Fade out
-        Valhalla.gameObject.SetActive(false);
-        Pandora.gameObject.SetActive(false);
-        Hand.gameObject.SetActive(false);
-
+        StartCoroutine(CutS_FadeCoroutine());
 
         // 두번째 컷씬 Set Active
         yield return new WaitForSeconds(3f);
-        People.gameObject.SetActive(true);
-        FrontObject.gameObject.SetActive(true);
-
         // 두번째 대사 분기 시작
         yield return new WaitUntil(() => DialogSystem02.UpdateDialog());
 
@@ -72,9 +63,10 @@ public class IntroTest_2 : MonoBehaviour
 
     IEnumerator NT_FadeCoroutine()
     {
-        NT_background.gameObject.SetActive(true);
+        NT_background.gameObject.SetActive(true); 
 
         Color alpha = NT_background.color;
+        
         while (alpha.a < 1f)
         {
             time += Time.deltaTime / F_time;
@@ -99,35 +91,45 @@ public class IntroTest_2 : MonoBehaviour
         yield return null;
 
     }
-
-    /* IEnumerator CutS_FadeCoroutine()
+        
+     IEnumerator CutS_FadeCoroutine()
     {
-        FirstCut.gameObject.SetActive(true);
+        Color alphaV = Valhalla.color;
+        Color alphaH = Hand.color;
+        Color alphaP = Pandora.color;
 
-        Color alpha = Valhalla.color;
+        Color alphaPE = People.color;
+        Color alphaFO = FrontObject.color;
 
-        while (alpha.a < 1f)
+        while (alphaV.a > 0 && alphaH.a > 0 && alphaP.a > 0)
         {
-            time += Time.deltaTime / F_time;
-            alpha.a = Mathf.Lerp(0, 3, time);
-            NT_background.color = alpha;
+            time += Time.deltaTime /F_time;
+            alphaV.a = Mathf.Lerp(1, 0, time);
+            alphaH.a = Mathf.Lerp(1, 0, time);
+            alphaP.a = Mathf.Lerp(1, 0, time);
+
+            Valhalla.color = alphaV;
+            Hand.color = alphaH;
+            Pandora.color = alphaP;
+
             yield return null;
         }
 
         time = 0f;
+        yield return new WaitForSeconds(3f);
 
-        yield return new WaitForSeconds(1f);
-
-        while (alpha.a > 0f)
+        while (alphaPE.a < 1f && alphaFO.a < 1f)
         {
             time += Time.deltaTime / F_time;
-            alpha.a = Mathf.Lerp(1, 0, time);
-            NT_background.color = alpha;
+            alphaPE.a = Mathf.Lerp(0, 3, time);
+            alphaFO.a = Mathf.Lerp(0, 3, time);
+
+            People.color = alphaPE;
+            FrontObject.color = alphaFO;
             yield return null;
         }
 
-        NT_background.gameObject.SetActive(false);
         yield return null;
 
-    }*/
+    }
 }

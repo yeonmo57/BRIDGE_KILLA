@@ -16,7 +16,7 @@ public class IntroTest_4 : MonoBehaviour
     
     // 페이드인 시간 조절
     float time = 0f;
-    float F_time = 2f;
+    float F_time = 5f;
 
     void Start()
     {
