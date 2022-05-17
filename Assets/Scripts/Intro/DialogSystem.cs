@@ -43,7 +43,7 @@ public class DialogSystem : MonoBehaviour
             
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0))
         {
             // 텍스트 타이핑 효과를 재생중일 때 스페이스 누르면 타이핑 효과 종료
             if (isTypingEffect == true)
