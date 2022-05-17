@@ -7,7 +7,8 @@ public class IntroTest_3 : MonoBehaviour
 {
     public ItemManager itemManager;
     public GameObject DialogImage;
-    
+    public GameObject ArrowImage;
+
     public Text itemText;
     int textIndex;
     bool isClick;
@@ -42,6 +43,7 @@ public class IntroTest_3 : MonoBehaviour
         TextLog(objData.id, objData.isNpc);
 
         DialogImage.SetActive(isClick);
+        ArrowImage.SetActive(isClick);
 
     }
 
@@ -68,4 +70,8 @@ public class IntroTest_3 : MonoBehaviour
         isClick = true;
         textIndex++;
     }
+
+   
+
+
 }
