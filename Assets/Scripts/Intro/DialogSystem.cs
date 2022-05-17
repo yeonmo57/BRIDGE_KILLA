@@ -45,7 +45,7 @@ public class DialogSystem : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            // 텍스트 타이핑 효과를 재생중일 때 스페이스 누르면 타이핑 효과 종료
+            // 텍스트 타이핑 효과를 재생중일 때 다시 누르면 타이핑 효과 종료
             if (isTypingEffect == true)
             {
                 isTypingEffect = false;
@@ -58,11 +58,10 @@ public class DialogSystem : MonoBehaviour
                 speaker.objectArrow.SetActive(true);
 
                 return false;
-
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0))
         {
             // 대사가 남아있을 경우 다음 대사 진행
             if(dialogs.Length > currentDialogIndex + 1)
@@ -126,6 +125,7 @@ public class DialogSystem : MonoBehaviour
         speaker.objectArrow.SetActive(true);
 
     }
+
     // 시스템 직렬화 
     [System.Serializable]
     public struct Speaker
