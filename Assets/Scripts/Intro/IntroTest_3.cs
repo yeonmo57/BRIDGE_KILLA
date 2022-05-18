@@ -82,7 +82,7 @@ public class IntroTest_3 : MonoBehaviour
             textIndex = 0; // 대화 끝날 때 index 초기화
             return; //  강제 종료
         }
-        
+
 
 
         if (isNpc)
@@ -96,5 +96,5 @@ public class IntroTest_3 : MonoBehaviour
 
         isClick = true;
         textIndex++;
-    
+    }
 }
