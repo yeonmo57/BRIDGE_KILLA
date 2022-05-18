@@ -17,12 +17,11 @@ public class IntroTest_3 : MonoBehaviour
     bool isClick;
     string objectName;
     GameObject clickedObject;
-
     
     void Update()
     {
         /*
-        // ¿ÀºêÁ§Æ® Å¬¸¯½Ã
+        // ì˜¤ë¸Œì íŠ¸ í´ë¦­ì‹œ
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -39,13 +38,11 @@ public class IntroTest_3 : MonoBehaviour
         }
         */
 
-        closeBag();
-
     }
     
     public void Click()
     {
-        // collider¸¸ rayhit ÇÒ ¼ö ÀÖ°Ô ÄÚµå ¼öÁ¤ ÇÊ¿äÇÔ 
+        // colliderë§Œ rayhit í•  ìˆ˜ ìˆê²Œ ì½”ë“œ ìˆ˜ì • í•„ìš”í•¨ 
 
         Vector2 clickPos = Input.mousePosition;
         RaycastHit2D hitInformation = Physics2D.Raycast(clickPos, Camera.main.transform.forward);
@@ -56,17 +53,14 @@ public class IntroTest_3 : MonoBehaviour
             {
                 clickedObject = hitInformation.transform.gameObject;
                 objectName = clickedObject.name;
+
+                GameObject obj = GameObject.Find(objectName);
+                ObjData objData = obj.GetComponent<ObjData>();
+
+                TextLog(objData.id, objData.isNpc);
             }
-            
+
         }
-          
-        
-        GameObject obj = GameObject.Find(objectName);
-        ObjData objData = obj.GetComponent<ObjData>();
-
-        TextLog(objData.id, objData.isNpc);
-
-        obj = null;
 
         if (!levelManager.arrive)
         {
@@ -82,18 +76,18 @@ public class IntroTest_3 : MonoBehaviour
 
         string itemData = itemManager.GetText(id, textIndex);
 
-        
         if (itemData == null)
         {
             isClick = false;
-            textIndex = 0; // ´ëÈ­ ³¡³¯ ¶§ index ÃÊ±âÈ­
-            return; //  °­Á¦ Á¾·á
+            textIndex = 0; // ëŒ€í™” ëë‚  ë•Œ index ì´ˆê¸°í™”
+            return; //  ê°•ì œ ì¢…ë£Œ
         }
         
 
+
         if (isNpc)
         {
-            itemText.text = itemData;  
+            itemText.text = itemData;
         }
         else
         {
@@ -102,14 +96,5 @@ public class IntroTest_3 : MonoBehaviour
 
         isClick = true;
         textIndex++;
-    } 
-
-    // ¸ğµç ¾ÆÀÌÅÛÀ» ´ãÀ» ½Ã °¡¹æ ´İÀ½
-    void closeBag()
-    {
-        if(levelManager.count == 7)
-        {
-            Debug.Log("´Ù ´ã¾Ò´Ù!");
-        } 
-    }
+    
 }
