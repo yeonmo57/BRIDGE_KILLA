@@ -58,7 +58,7 @@ public class IntroTest_2 : MonoBehaviour
         yield return new WaitUntil(() => DialogSystem02.UpdateDialog());
 
         // Intro3 ¾À ÀüÈ¯
-        // SceneManager.LoadScene("Intro3");
+        SceneManager.LoadScene("Intro3");
     }
 
     IEnumerator NT_FadeCoroutine()

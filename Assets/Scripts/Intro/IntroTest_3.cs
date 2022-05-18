@@ -10,6 +10,7 @@ public class IntroTest_3 : MonoBehaviour
     public GameObject DialogImage;
     public GameObject ArrowImage;
 
+    public Image Bag;
     public LevelManager levelManager;
     public Text itemText;
 
@@ -17,7 +18,11 @@ public class IntroTest_3 : MonoBehaviour
     bool isClick;
     string objectName;
     GameObject clickedObject;
-    
+
+    // 페이드인 시간 조절
+    float time = 0f;
+    float F_time = 5f;
+
     void Update()
     {
         /*
@@ -37,6 +42,12 @@ public class IntroTest_3 : MonoBehaviour
             }
         }
         */
+
+        if (levelManager.count == 7)
+        {
+            StartCoroutine(FadeFlow());
+            return; 
+        }
 
     }
     
@@ -96,5 +107,24 @@ public class IntroTest_3 : MonoBehaviour
 
         isClick = true;
         textIndex++;
+    }
+
+    IEnumerator FadeFlow()
+    {
+        yield return new WaitForSeconds(1.5f);
+
+        Bag.gameObject.SetActive(true);
+        Color alpha = Bag.color;
+        while (alpha.a < 1f)
+        {
+            time += Time.deltaTime / F_time;
+            alpha.a = Mathf.Lerp(0, 1, time);
+            Bag.color = alpha;
+            yield return new WaitForSeconds(0.2f);
+        }
+
+        yield return new WaitForSeconds(2f);
+
+        SceneManager.LoadScene("SubIntro");
     }
 }
