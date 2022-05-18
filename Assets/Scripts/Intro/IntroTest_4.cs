@@ -12,6 +12,8 @@ public class IntroTest_4 : MonoBehaviour
     public Image gameStart;
     public Image gameLoad;
 
+    public Image Panel;
+
     Vector3 targetPosition;
     
     // 페이드인 시간 조절
@@ -20,7 +22,8 @@ public class IntroTest_4 : MonoBehaviour
 
     void Start()
     {
-        targetPosition = new Vector3(0, 0, -10);  
+        targetPosition = new Vector3(0, 0, -10);
+        StartCoroutine(FadeFlow());
     }
 
 
@@ -48,11 +51,21 @@ public class IntroTest_4 : MonoBehaviour
             gameStart.color = alphaS;
             gameLoad.color = alphaL;
             yield return null;
-        }
-
-     
-    
-
+        }        
     }
 
+    IEnumerator FadeFlow()
+    {
+        Color alpha = Panel.color;
+        while (alpha.a > 0f)
+        {
+            time += Time.deltaTime / 2;
+            alpha.a = Mathf.Lerp(0.9f, 0, time);
+            Panel.color = alpha;
+            yield return null;
+        }
+
+        Panel.gameObject.SetActive(false);
+        yield return null;
+    }
 }

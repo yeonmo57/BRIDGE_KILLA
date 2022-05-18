@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Intro/Intro4.unity
     guid: 23d080e6455d120409fe15ea42b7be92
+  - enabled: 1
+    path: Assets/Scenes/Intro/SubIntro.unity
+    guid: 393cd7a6e4730e84f9cc53c34be732db
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
