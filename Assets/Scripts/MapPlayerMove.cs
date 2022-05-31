@@ -9,9 +9,9 @@ public class MapPlayerMove : MonoBehaviour
     //public GameObject field;
     public float speed = 1.0f;
 
-    //헨젤과 그레텔처럼.. 빵 조각을 따라서 움직입니다.
-    [SerializeField] Transform[] cliffPos; //빵조각 배열
-    int cliffNum = 0; //빵 인덱스
+    
+    [SerializeField] Transform[] cliffPos; 
+    int cliffNum = 0; 
 
     [SerializeField] Transform[] fieldPos; 
     int fieldNum = 0; 
@@ -19,10 +19,14 @@ public class MapPlayerMove : MonoBehaviour
     bool move = false;
     bool move_field = false;
 
+    //애니메이션
+    Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         //transform.position = cliffPos[cliffNum].transform.position;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -41,14 +45,17 @@ public class MapPlayerMove : MonoBehaviour
 
     public void OnclickCliff()
     {
+        
         Debug.Log("Button Click");
         move = true;
     }
 
     public void OnclickField()
     {
+        animator.SetBool("Right", true);
         Debug.Log("Button Click");
         move_field = true;
+        //way = 1;
     }
 
     public void Movecliff()
@@ -82,6 +89,7 @@ public class MapPlayerMove : MonoBehaviour
         if (fieldNum == fieldPos.Length)
         {
             //해당 씬으로 이동
+            animator.SetBool("Right", false);
             move_field = false;
             Debug.Log("Next field Scenes");
         }
