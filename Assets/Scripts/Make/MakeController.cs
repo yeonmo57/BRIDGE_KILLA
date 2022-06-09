@@ -192,8 +192,6 @@ public class MakeController : MonoBehaviour
             StartCoroutine(StockEnd());
             Debug.Log("stocknum==6");
         }
-
-
     }
 
     private IEnumerator LilyEnd()
