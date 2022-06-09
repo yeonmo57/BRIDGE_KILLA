@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3e4f6e4584657df4083cbca59d66d88e
+guid: 6db63e2850c23e3468aeec13059943b3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6868357993614996932
-    second: Make_Machine1_Material1_making_0
+      213: -4697313319861482290
+    second: Make_Machine1_2complete_serve_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -130,13 +130,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Make_Machine1_Material1_making_0
+      name: Make_Machine1_2complete_serve_0
       rect:
         serializedVersion: 2
-        x: 1091
-        y: 531
-        width: 263
-        height: 494
+        x: 539
+        y: 160
+        width: 290
+        height: 156
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,8 +144,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c5f2af743f415f50800000000000000
-      internalID: 6868357993614996932
+      spriteID: ecc02fa4c6acfceb0800000000000000
+      internalID: -4697313319861482290
       vertices: []
       indices: 
       edges: []

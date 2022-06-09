@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3e4f6e4584657df4083cbca59d66d88e
+guid: c0119ae060f2ce04c826e6a362c9cd3f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6868357993614996932
-    second: Make_Machine1_Material1_making_0
+      213: 965654433664397306
+    second: Make_Background_wood_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -130,13 +130,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Make_Machine1_Material1_making_0
+      name: Make_Background_wood_0
       rect:
         serializedVersion: 2
-        x: 1091
-        y: 531
-        width: 263
-        height: 494
+        x: 1065
+        y: 102
+        width: 819
+        height: 949
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,8 +144,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c5f2af743f415f50800000000000000
-      internalID: 6868357993614996932
+      spriteID: affe8565791b66d00800000000000000
+      internalID: 965654433664397306
       vertices: []
       indices: 
       edges: []
