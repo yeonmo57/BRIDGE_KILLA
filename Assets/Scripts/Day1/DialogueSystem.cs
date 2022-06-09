@@ -50,8 +50,9 @@ public class DialogueSystem : MonoBehaviour
             if (isTypingEffect)
             {
                 isTypingEffect = false;
+
                 // 타이핑 효과 중지, 현재 대사 전체 출력
-                StopCoroutine("OnTypingEffect");
+                StopCoroutine("OnTypingText");
                 speakers[currentSpeakerIndex].textDialogue.text = dialogues[currentDialogueIndex].dialogue;
                 // 대사가 완료되었을 때 출력되는 커서 활성화
                 speakers[currentSpeakerIndex].objectArrow.SetActive(true);
@@ -122,6 +123,7 @@ public class DialogueSystem : MonoBehaviour
         int index = 0;
 
         isTypingEffect = true;
+
         while(index < dialogues[currentDialogueIndex].dialogue.Length)
         {
             speakers[currentSpeakerIndex].textDialogue.text = dialogues[currentDialogueIndex].dialogue.Substring(0, index);
@@ -134,6 +136,7 @@ public class DialogueSystem : MonoBehaviour
 
         speakers[currentSpeakerIndex].objectArrow.SetActive(true);
     }
+
 }
 
 [System.Serializable]

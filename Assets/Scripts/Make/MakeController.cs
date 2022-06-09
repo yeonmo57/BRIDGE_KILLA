@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 //여기서 말하는 아이템은 make의 재료가 되는 약초 입니다
 
@@ -173,7 +174,7 @@ public class MakeController : MonoBehaviour
         else if(serve == true)
         {
             //제공하는 씬 호출
-            Debug.Log("serve");
+            SceneManager.LoadScene("Day1-2");
         }
     }
 
