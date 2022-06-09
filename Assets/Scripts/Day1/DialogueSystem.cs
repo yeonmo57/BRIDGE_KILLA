@@ -14,6 +14,8 @@ public class DialogueSystem : MonoBehaviour
     private bool isFirst = true; // 최초 1회만 호출하기 위한 변수
     private int currentDialogueIndex = -1; // 현재 대사 순번
     private int currentSpeakerIndex = 0; // 현재 말을 하는 화자의 speakers 배열 순번 
+    private float typingSpeed = 0.1f; // 타이핑 효과 재생 속도
+    private bool isTypingEffect = false; // 텍스트 타이핑 효과 재생중인지
 
     private void Awake()
     {
@@ -45,6 +47,18 @@ public class DialogueSystem : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
+            if (isTypingEffect)
+            {
+                isTypingEffect = false;
+                // 타이핑 효과 중지, 현재 대사 전체 출력
+                StopCoroutine("OnTypingEffect");
+                speakers[currentSpeakerIndex].textDialogue.text = dialogues[currentDialogueIndex].dialogue;
+                // 대사가 완료되었을 때 출력되는 커서 활성화
+                speakers[currentSpeakerIndex].objectArrow.SetActive(true);
+
+                return false;
+
+            }
             // 대사가 남아있을 경우 다음 대사 진행
             if(dialogues.Length > currentDialogueIndex + 1)
             {
@@ -84,6 +98,8 @@ public class DialogueSystem : MonoBehaviour
 
         // 현재 화자의 대사 텍스트 설정
         speakers[currentSpeakerIndex].textDialogue.text = dialogues[currentDialogueIndex].dialogue;
+
+        StartCoroutine("OnTypingText");
     }
 
     private void SetActiveObjects(Speaker speaker, bool visible)
@@ -96,9 +112,27 @@ public class DialogueSystem : MonoBehaviour
         speaker.objectArrow.gameObject.SetActive(false);
 
         // 캐릭터 알파값 변경
-        Color color = speaker.spriteRenderer.color;
-        color.a = visible == true ? 1 : 0.2f;
-        speaker.spriteRenderer.color = color;
+        //Color color = speaker.spriteRenderer.color;
+        //color.a = visible == true ? 1 : 0.2f;
+        //speaker.spriteRenderer.color = color;
+    }
+
+    private IEnumerator OnTypingText()
+    {
+        int index = 0;
+
+        isTypingEffect = true;
+        while(index < dialogues[currentDialogueIndex].dialogue.Length)
+        {
+            speakers[currentSpeakerIndex].textDialogue.text = dialogues[currentDialogueIndex].dialogue.Substring(0, index);
+            index++;
+
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+        isTypingEffect = false;
+
+        speakers[currentSpeakerIndex].objectArrow.SetActive(true);
     }
 }
 

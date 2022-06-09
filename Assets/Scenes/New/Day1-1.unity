@@ -1090,7 +1090,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 1.36
   m_Text: "\uC5EC\uAE30\uB294 \uD14D\uC2A4\uD2B8 \uCC3D\uC785\uB2C8\uB2E4."
 --- !u!222 &932308362
 CanvasRenderer:
@@ -1429,6 +1429,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228391398}
   m_CullTransparentMesh: 1
+--- !u!1 &1240599580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1240599581}
+  - component: {fileID: 1240599582}
+  m_Layer: 0
+  m_Name: DialougueTest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1240599581
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240599580}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.8345985, y: 4.0811324, z: 1437.9304}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1240599582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240599580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0db1f19065bcde649887d621aad9125b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueSystem: {fileID: 1371016425}
 --- !u!1 &1297143525
 GameObject:
   m_ObjectHideFlags: 0
@@ -1645,7 +1689,7 @@ MonoBehaviour:
   speakers:
   - spriteRenderer: {fileID: 1346477961}
     imageBox: {fileID: 1720264542}
-    textName: {fileID: 932308361}
+    textName: {fileID: 567750632}
     textDialogue: {fileID: 932308361}
     objectArrow: {fileID: 1449518935}
   - spriteRenderer: {fileID: 1297143528}
@@ -1685,7 +1729,7 @@ MonoBehaviour:
   - speakerIndex: 0
     name: "\uBC1C\uD560\uB77C"
     dialogue: "\uC57D\uC7AC\uAC00 \uB110\uBE0C\uB7EC\uC9C4\uAC78 \uBCF4\uBA74 \uBD84\uBA85
-      \uC57D\uC0AC\uBC1C \uC815\uB3C4\uB294 \uC788\uC744 \uBC95\uD55C\uB370."
+      \n\uC57D\uC0AC\uBC1C \uC815\uB3C4\uB294 \uC788\uC744 \uBC95\uD55C\uB370."
   - speakerIndex: 0
     name: "\uBC1C\uD560\uB77C"
     dialogue: "\uAC08\uD310\uC774\uB2E4!"
@@ -2510,7 +2554,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -30}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1868820189
