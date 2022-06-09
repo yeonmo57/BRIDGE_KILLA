@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 //여기서 말하는 아이템은 make의 재료가 되는 약초 입니다
 
 //FieldItems 스크립트의 응용
@@ -13,25 +14,20 @@ public class MakeController : MonoBehaviour
     public GameObject log2;
     public GameObject log3;
 
-    /*
-    //이거 나중에 없애야합니다..ㅜㅜ 이렇게 하고 싶지 않았는데..
-    public GameObject log1_stock;
-    public GameObject log2_stock;
-    public GameObject log3_stock;
-    */
+    public GameObject EndBlackBox;
 
     //개수를 나타내는 텍스트
     private Text lily;
     private Text stock; //스토크라는 꽃 이름 입니다(우리말: 비단향꽃무)
-    private int numlily = 9;
-    private int numstock = 9;
+    public int numlily;
+    public int numstock;
 
     //이미지
     //말풍선용
     public Sprite lily_img;
     public Sprite stock_img;
     public Sprite serve_img; //제공 손바닥 
-
+    public Sprite play_img; //화살표
 
     public GameObject Buttonlily;
     public GameObject Buttonstock;
@@ -40,8 +36,6 @@ public class MakeController : MonoBehaviour
 
     private int numClick=0; //몇번째 아이템 선택인지
 
-    
-
     private void Start()
     {
         lily = GameObject.Find("Material_Name_Lily").GetComponent<Text>();
@@ -49,14 +43,15 @@ public class MakeController : MonoBehaviour
 
         //thisImg = GetComponent<Image>();
 
-        
-        
+        numlily = 9;
+        numstock = 9;
+        lily.text = numlily.ToString() + "개";
+        stock.text = numlily.ToString() + "개";
     }
 
     void Update()
     {
         
-
 
     }
 
@@ -88,8 +83,6 @@ public class MakeController : MonoBehaviour
             log3.GetComponent<Image>().sprite = lily_img;
             log3.SetActive(true);
         }
-
-
         //만약 세번째 클릭이면 제공으로 이미지 버튼 변경
         choiceEnd();
     }
@@ -100,7 +93,6 @@ public class MakeController : MonoBehaviour
         stock.text = numstock.ToString() + "개";
         numClick += 1;
 
-        
         if (numClick == 1)
         {
             log1.GetComponent<Image>().sprite = stock_img;
@@ -116,23 +108,10 @@ public class MakeController : MonoBehaviour
             log3.GetComponent<Image>().sprite = stock_img;
             log3.SetActive(true);
         }
-
         choiceEnd();
-
-
     }
 
-    public void OnclickPlay()
-    {
-        
-
-        //블랙박스가 화면을 덮음
-        //마데카솔등장
-        //블랙박스 하나더 등장, 마데카솔 커짐(?), 콘솔창에 마데카솔 이름 등장(텍스트)
-
-        //종료. 대화씬으로 돌아가기
-    }
-
+    //3번 눌러서 선택 끝났을때
     public void choiceEnd()
     {
         GameObject PlayButton = GameObject.Find("Play_Button");
@@ -146,7 +125,73 @@ public class MakeController : MonoBehaviour
             PlayButton.GetComponent<Image>().sprite = serve_img;
             PlayButton.GetComponent<Button>().interactable = true;
 
+            //GameObject EndBlackBox = GameObject.Find("EndBlackBox");
+            
         }
     }
 
+    public void OnclickRetry()
+    {
+        //전부 초기화
+        GameObject PlayButton = GameObject.Find("Play_Button");
+        Buttonlily.GetComponent<Button>().interactable = true;
+        Buttonstock.GetComponent<Button>().interactable = true;
+
+        PlayButton.GetComponent<Image>().sprite = play_img;
+        PlayButton.GetComponent<Button>().interactable = false;
+
+        numClick = 0;
+        numlily = 9;
+        numstock = 9;
+        lily.text = numlily.ToString() + "개";
+        stock.text = numlily.ToString() + "개";
+
+        log1.SetActive(false);
+        log2.SetActive(false);
+        log3.SetActive(false);
+
+        EndBlackBox.SetActive(false);
+    }
+
+    public void OnclickPlay()
+    {
+        //블랙박스가 화면을 덮음
+        EndBlackBox.SetActive(true);
+        StartCoroutine(EndAnimate());
+
+
+        //마데카솔등장
+        //블랙박스 하나더 등장, 마데카솔 커짐(?), 콘솔창에 마데카솔 이름 등장(텍스트)
+
+        //종료. 대화씬으로 돌아가기
+    }
+
+    private IEnumerator EndAnimate()
+    {
+        yield return new WaitForSeconds(2f);
+        Debug.Log("wait");
+
+        if (numlily == 6)
+        {
+            StartCoroutine(LilyEnd());
+            Debug.Log("num==6");
+        }
+        else if (numstock == 6)
+        {
+            StartCoroutine(StockEnd());
+            Debug.Log("num==6");
+        }
+    }
+
+    private IEnumerator LilyEnd()
+    {
+        yield return new WaitForSeconds(2f);
+        Debug.Log("lilyend");
+    }
+
+    private IEnumerator StockEnd()
+    {
+        yield return new WaitForSeconds(2f);
+        Debug.Log("stockend");
+    }
 }
