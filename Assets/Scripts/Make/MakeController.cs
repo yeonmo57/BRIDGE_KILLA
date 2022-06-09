@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 //여기서 말하는 아이템은 make의 재료가 되는 약초 입니다
 
 //FieldItems 스크립트의 응용
@@ -161,6 +160,7 @@ public class MakeController : MonoBehaviour
 
     public void OnclickPlay()
     {
+        //false일때는 아이템 만드는 함수, true가 되면 제공하는 기능
         if (serve == false)
         {
             GameObject PlayButton = GameObject.Find("Play_Button");
