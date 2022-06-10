@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MapPlayerMove : MonoBehaviour
 {
@@ -21,6 +22,9 @@ public class MapPlayerMove : MonoBehaviour
 
     //애니메이션
     Animator animator;
+
+    public GameObject EndingText;
+    public GameObject EndingBox;
 
     // Start is called before the first frame update
     void Start()
@@ -92,7 +96,16 @@ public class MapPlayerMove : MonoBehaviour
             animator.SetBool("Right", false);
             move_field = false;
             Debug.Log("Next field Scenes");
+
+            StartCoroutine(Ending());
+
         }
     }
 
+    private IEnumerator Ending()
+    {
+        yield return new WaitForSeconds(1.5f);
+        EndingText.SetActive(true);
+        EndingBox.SetActive(true);
+    }
 }
