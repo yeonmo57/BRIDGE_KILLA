@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class IntroTest_4 : MonoBehaviour
 {
@@ -11,8 +12,9 @@ public class IntroTest_4 : MonoBehaviour
     public GameObject canvas;
     public Image gameStart;
     public Image gameLoad;
-
     public Image Panel;
+    
+    public Button GameStartButton;
 
     Vector3 targetPosition;
     
@@ -22,6 +24,7 @@ public class IntroTest_4 : MonoBehaviour
 
     void Start()
     {
+        GameStartButton.onClick.AddListener(GameStart);
         targetPosition = new Vector3(0, 0, -10);
         StartCoroutine(FadeFlow());
     }
@@ -67,5 +70,10 @@ public class IntroTest_4 : MonoBehaviour
 
         Panel.gameObject.SetActive(false);
         yield return null;
+    }
+
+    void GameStart()
+    {
+        SceneManager.LoadScene("Day1-1");
     }
 }

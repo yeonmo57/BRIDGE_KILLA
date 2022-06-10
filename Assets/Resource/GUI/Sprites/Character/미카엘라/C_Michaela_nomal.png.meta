@@ -1,7 +1,31 @@
 fileFormatVersion: 2
 guid: 857287f134021a14f991ca013642f18a
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 457795531936703807
+    second: C_Michaela_nomal_0
+  - first:
+      213: 3894033727623655189
+    second: C_Michaela_nomal_1
+  - first:
+      213: 6159147107670282684
+    second: C_Michaela_nomal_2
+  - first:
+      213: -1396770381943782811
+    second: C_Michaela_nomal_3
+  - first:
+      213: -4256574506214144612
+    second: C_Michaela_nomal_4
+  - first:
+      213: -8485516039791949661
+    second: C_Michaela_nomal_5
+  - first:
+      213: -1973911243313279764
+    second: C_Michaela_nomal_6
+  - first:
+      213: -4663461335983756697
+    second: C_Michaela_nomal_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +65,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -65,10 +89,34 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -77,7 +125,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: C_Michaela_nomal_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 2
+        width: 549
+        height: 779
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3529dc5c9a6a5600800000000000000
+      internalID: 457795531936703807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Michaela_nomal_1
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 2
+        width: 549
+        height: 782
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51fe5663b036a0630800000000000000
+      internalID: 3894033727623655189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Michaela_nomal_2
+      rect:
+        serializedVersion: 2
+        x: 1123
+        y: 2
+        width: 549
+        height: 784
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb1df0079afa97550800000000000000
+      internalID: 6159147107670282684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Michaela_nomal_3
+      rect:
+        serializedVersion: 2
+        x: 1683
+        y: 2
+        width: 549
+        height: 782
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 562447fecbcad9ce0800000000000000
+      internalID: -1396770381943782811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Michaela_nomal_4
+      rect:
+        serializedVersion: 2
+        x: 2243
+        y: 2
+        width: 549
+        height: 779
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c954f15f90c9de4c0800000000000000
+      internalID: -4256574506214144612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Michaela_nomal_5
+      rect:
+        serializedVersion: 2
+        x: 2803
+        y: 2
+        width: 549
+        height: 782
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a84258be146d3a80800000000000000
+      internalID: -8485516039791949661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Michaela_nomal_6
+      rect:
+        serializedVersion: 2
+        x: 3363
+        y: 2
+        width: 549
+        height: 784
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cec8924be224b94e0800000000000000
+      internalID: -1973911243313279764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Michaela_nomal_7
+      rect:
+        serializedVersion: 2
+        x: 3923
+        y: 2
+        width: 549
+        height: 782
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76a6bec7f9e084fb0800000000000000
+      internalID: -4663461335983756697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
