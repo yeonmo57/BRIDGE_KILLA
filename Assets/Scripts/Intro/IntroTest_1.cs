@@ -35,6 +35,7 @@ public class IntroTest_1: MonoBehaviour
 
     private IEnumerator Start()
     {
+        Screen.SetResolution(1920, 1080, true);
         sr = T_background.GetComponent<SpriteRenderer>();
         float alphaValue = sr.color.a;
 
