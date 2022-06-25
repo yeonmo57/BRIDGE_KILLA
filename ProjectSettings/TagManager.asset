@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Item
+  - Portal_L
+  - Portal_R
+  - Portal_U
+  - Portal_D
   layers:
   - Default
   - TransparentFX
