@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class logImage1 : MonoBehaviour
 {
+    public Sprite lily_img;
     public Sprite stock_img;
     Image thisImg1;
 
