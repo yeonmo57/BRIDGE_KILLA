@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 //여기서 말하는 아이템은 make의 재료가 되는 약초 입니다
 
 //FieldItems 스크립트의 응용
@@ -38,6 +39,8 @@ public class MakeController : MonoBehaviour
     public Sprite lily_making_img;
     //public Sprite stock_making_img;
 
+    
+
     public GameObject Buttonlily;
     public GameObject Buttonstock;
 
@@ -45,9 +48,19 @@ public class MakeController : MonoBehaviour
 
     bool serve;//false일때는 아이템 만드는 함수, true가 되면 제공하는 기능
 
+    //!!!여기서부터 신 코드!!!
+    public int index_lily = 2;
+    public int ans = 1;
+    int[] medicine_name = new int[3]{ 8, 27,0 };
+    public int temp = 1;
+
+    //public GameObject logImage1;
+
 
     private void Start()
     {
+        
+
         lily = GameObject.Find("Material_Name_Lily").GetComponent<Text>();
         //stock = GameObject.Find("Material_Name_Stock").GetComponent<Text>();
 
@@ -69,12 +82,14 @@ public class MakeController : MonoBehaviour
 
     public void Onclicklily()
     {
+        GameObject.Find("InMaterial_LogImage1").GetComponent<logImage1>().ChangeImage1();
+        /*
         //아이템 수량 변수 감소, 텍스트 반영
         numlily -= 1;
         lily.text = numlily.ToString() + "개";
         
         //몇번째 선택인지 변수 증가
-        numClick += 1;
+        numClick++;
 
         if (numClick == 1)
         {
@@ -94,7 +109,28 @@ public class MakeController : MonoBehaviour
         }
         //만약 세번째 클릭이면 제공으로 이미지 버튼 변경
         choiceEnd();
+        */
+
+        //!!!여기서부터 신 코드!!!
+        temp *= index_lily;
+        
     }
+
+    public void click_1st()
+    {
+
+    }
+
+    public void click_2nd()
+    {
+
+    }
+
+    public void click_3rd()
+    {
+
+    }
+
 
     /*
     public void Onclickstock()
@@ -228,4 +264,24 @@ public class MakeController : MonoBehaviour
         yield return new WaitForSeconds(2f);
         Debug.Log("stockend");
     }
+
+
+    //!!!여기서부터 신 코드!!!
+    public void calculate()
+    {
+        if (numClick == 3)
+        {
+            //for문 돌려서 list 속에서 해당하는 값 찾기
+            for (int i = 0; i < medicine_name.Length; i++)
+            {
+                if (medicine_name[i] == temp)
+                {
+                    ans = i; 
+                }
+            }
+
+        }
+    }
+
 }
+
