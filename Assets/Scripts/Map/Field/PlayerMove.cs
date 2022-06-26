@@ -6,18 +6,20 @@ public class PlayerMove : MonoBehaviour
 {
     public float moveSpeed;
     public Camera cam;
-    public Animation animation;
     public GameObject player;
-    
+
+    Animation camAni;
+    Animator animator;
     Vector3 inputPos;
     Vector2 dir;
     bool move;
-
+    float dis;
     // Start is called before the first frame update
     void Start()
     {
-
-
+        camAni = cam.GetComponent<Animation>();
+        animator = GetComponent<Animator>();
+        
         move = true;
     }
 
@@ -29,12 +31,16 @@ public class PlayerMove : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
                 inputPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
+            dis = player.transform.position.x - inputPos.x;
             dir = inputPos - player.transform.position;
-
+           
+            
             //if(dir!= Vector2.zero)
 
             player.transform.position =
                 Vector2.MoveTowards(player.transform.position, inputPos, Time.deltaTime * moveSpeed);
+
+            
         }
         else
         {
@@ -42,16 +48,23 @@ public class PlayerMove : MonoBehaviour
             {
                 move = true;
                 inputPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
             }
-
-
         }
-        
 
+        // animation
+        // dis = 현재 캐릭터 x좌표 - 마우스 인풋 x좌표
+        // dis > 0일 경우는 인풋이 캐릭터보다 왼쪽 -> left
+        // dis < 0일 경우는 인풋이 캐릭터보다 오른쪽 -> right
+        animator.SetFloat("hAxis", dis);
+
+        if (dis == 0)
+            animator.SetBool("Stay",true);
+        else
+            animator.SetBool("Stay", false);
 
     }
 
+    // 카메라 이동
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Portal_L")
@@ -59,17 +72,17 @@ public class PlayerMove : MonoBehaviour
             if (collision.transform.name == "Portal_L")
             {
                 Debug.Log("충돌감지, 왼쪽 이동");
-                animation.Play("Left");
+                camAni.Play("Left");
                 move = false;
-                player.transform.position = new Vector3(-13f, 0, 0);
+                player.transform.position = new Vector3(-12.37f, 0, 0); // 수정 완료
             }
 
             if (collision.transform.name == "Portal_L_2")
             {
                 Debug.Log("충돌감지, 오른쪽 이동");
-                animation.Play("Left_2");
+                camAni.Play("Left_2");
                 move = false;
-                player.transform.position = new Vector3(7.9f, 0, 0);
+                player.transform.position = new Vector3(7f, 0, 0); // 수정 완료
             }            
         }
 
@@ -78,17 +91,17 @@ public class PlayerMove : MonoBehaviour
             if (collision.transform.name == "Portal_R_2")
             {
                 Debug.Log("충돌감지, 오른쪽 이동");
-                animation.Play("Right_2");
+                camAni.Play("Right_2");
                 move = false;
-                player.transform.position = new Vector3(-7.57f, 0, 0);
+                player.transform.position = new Vector3(-7.12f, 0, 0); // 수정 완료
             }
 
             if (collision.transform.name == "Portal_R")
             {
                 Debug.Log("충돌감지, 오른쪽 이동");
-                animation.Play("Right");
+                camAni.Play("Right");
                 move = false;
-                player.transform.position = new Vector3(12.3f, 0, 0);
+                player.transform.position = new Vector3(12.3f, 0, 0); // 수정 완료
             }
 
         }
@@ -98,17 +111,17 @@ public class PlayerMove : MonoBehaviour
             if (collision.transform.name == "Portal_U_2") // 아래에서 중앙
             {
                 Debug.Log("충돌감지, 위쪽 이동");
-                animation.Play("Up_2");
+                camAni.Play("Up_2");
                 move = false;
-                player.transform.position = new Vector3(0, -3.18f, 0);
+                player.transform.position = new Vector3(0, -2.65f, 0); // 수정 완료
             }
 
             if (collision.transform.name == "Portal_U") // 중앙에서 위
             {
                 Debug.Log("충돌감지, 위쪽 이동");
-                animation.Play("Up");
+                camAni.Play("Up");
                 move = false;
-                player.transform.position = new Vector3(0, 8.15f, 0);
+                player.transform.position = new Vector3(0, 8.6f, 0); // 수정 완료
             }
 
         }
@@ -118,17 +131,17 @@ public class PlayerMove : MonoBehaviour
             if (collision.transform.name == "Portal_D")
             {
                 Debug.Log("충돌감지, 아래쪽 이동");
-                animation.Play("Down");
+                camAni.Play("Down");
                 move = false;
-                player.transform.position = new Vector3(0, -8.2f, 0);
+                player.transform.position = new Vector3(0, -8.7f, 0); // 수정 완료
             }
 
             if (collision.transform.name == "Portal_D_2")
             {
                 Debug.Log("충돌감지, 아래쪽 이동");
-                animation.Play("Down_2");
+                camAni.Play("Down_2");
                 move = false;   
-                player.transform.position = new Vector3(0, 3.2f, 0);
+                player.transform.position = new Vector3(0, 2.8f, 0); // 수정 완료
             }
         }
     }

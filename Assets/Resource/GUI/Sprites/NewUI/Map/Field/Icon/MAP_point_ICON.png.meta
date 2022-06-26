@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 3aa87cb44cc364548a128f6bcfdd20a9
+guid: 6500b9efb40b12047a0268bce83f41da
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8754911784825330269
-    second: MAP_C_PlayerFront_0
-  - first:
-      213: -1251299683503476230
-    second: MAP_C_PlayerFront_1
+      213: 4233963938872795450
+    second: MAP_point_ICON_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -93,53 +90,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MAP_C_PlayerFront_0
+      name: MAP_point_ICON_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 25
-        width: 129
-        height: 220
+        x: 100
+        y: 454
+        width: 64
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,29 +108,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5a156ef1e1bf7970800000000000000
-      internalID: 8754911784825330269
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MAP_C_PlayerFront_1
-      rect:
-        serializedVersion: 2
-        x: 179
-        y: 25
-        width: 129
-        height: 220
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: af17739419d72aee0800000000000000
-      internalID: -1251299683503476230
+      spriteID: a31a35815cf02ca30800000000000000
+      internalID: 4233963938872795450
       vertices: []
       indices: 
       edges: []
