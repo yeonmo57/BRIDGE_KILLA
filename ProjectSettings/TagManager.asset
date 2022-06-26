@@ -9,6 +9,7 @@ TagManager:
   - Portal_R
   - Portal_U
   - Portal_D
+  - Wall
   layers:
   - Default
   - TransparentFX

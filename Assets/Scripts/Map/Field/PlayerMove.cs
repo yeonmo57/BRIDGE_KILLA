@@ -12,20 +12,24 @@ public class PlayerMove : MonoBehaviour
     Animator animator;
     Vector3 inputPos;
     Vector2 dir;
+    Rigidbody2D rigid2D;
     bool move;
     float dis;
+
+
     // Start is called before the first frame update
     void Start()
     {
         camAni = cam.GetComponent<Animation>();
         animator = GetComponent<Animator>();
-        
+        rigid2D = GetComponent<Rigidbody2D>();
         move = true;
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void FixedUpdate()
+    { 
+
         if (move)
         {
             if (Input.GetMouseButtonDown(0))
@@ -33,12 +37,12 @@ public class PlayerMove : MonoBehaviour
 
             dis = player.transform.position.x - inputPos.x;
             dir = inputPos - player.transform.position;
-           
-            
-            //if(dir!= Vector2.zero)
 
+
+            //if(dir!= Vector2.zero)
+            //rigid2D.MovePosition(player.transform.position + inputPos * Time.deltaTime * moveSpeed);
             player.transform.position =
-                Vector2.MoveTowards(player.transform.position, inputPos, Time.deltaTime * moveSpeed);
+              Vector2.MoveTowards(player.transform.position, inputPos, Time.deltaTime * moveSpeed);
 
             
         }
