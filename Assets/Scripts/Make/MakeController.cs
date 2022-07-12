@@ -10,10 +10,6 @@ using UnityEngine.SceneManagement;
 //FieldItems 스크립트의 응용
 public class MakeController : MonoBehaviour
 {
-    public GameObject log1;
-    public GameObject log2;
-    public GameObject log3;
-
     public GameObject EndBlackBox;
     public GameObject EndBlackBox2;
 
@@ -37,9 +33,7 @@ public class MakeController : MonoBehaviour
     public Sprite serve_img; //제공 손바닥 
     public Sprite play_img; //화살표
     public Sprite lily_making_img;
-    //public Sprite stock_making_img;
-
-    
+    public Sprite stock_making_img;
 
     public GameObject Buttonlily;
     public GameObject Buttonstock;
@@ -48,28 +42,27 @@ public class MakeController : MonoBehaviour
 
     bool serve;//false일때는 아이템 만드는 함수, true가 되면 제공하는 기능
 
-    //!!!여기서부터 신 코드!!!
+    //!!!여기서부터 수정한 것!!!
     public int index_lily = 2;
-    public int ans = 1;
-    int[] medicine_name = new int[3]{ 8, 27,0 };
+    public int index_stock = 3;
     public int temp = 1;
+    //굳이 필요없을듯?
+    public int ans = 1;
+    int[] medicine_name = new int[3]{ 8, 27,0 }; 
 
     //public GameObject logImage1;
 
-
     private void Start()
     {
-        
-
         lily = GameObject.Find("Material_Name_Lily").GetComponent<Text>();
-        //stock = GameObject.Find("Material_Name_Stock").GetComponent<Text>();
+        stock = GameObject.Find("Material_Name_Stock").GetComponent<Text>();
 
         Medecine_Name = GameObject.Find("Make_CompletionName").GetComponent<Text>();
 
         numlily = 9;
         numstock = 9;
         lily.text = numlily.ToString() + "개";
-        //stock.text = numlily.ToString() + "개";
+        stock.text = numlily.ToString() + "개";
 
         serve = false;
     }
@@ -82,94 +75,62 @@ public class MakeController : MonoBehaviour
 
     public void Onclicklily()
     {
-        GameObject.Find("InMaterial_LogImage1").GetComponent<logImage1>().ChangeImage1();
-        /*
+        //몇번째 선택인지 변수 증가
+        numClick++;
         //아이템 수량 변수 감소, 텍스트 반영
         numlily -= 1;
         lily.text = numlily.ToString() + "개";
-        
-        //몇번째 선택인지 변수 증가
-        numClick++;
 
         if (numClick == 1)
         {
-            log1.GetComponent<Image>().sprite = lily_img;
-            log1.SetActive(true);
+            GameObject.Find("InMaterial_LogImage1").GetComponent<logImage1>().Change_lily();
         }
-        
         else if (numClick == 2)
         {
-            log2.GetComponent<Image>().sprite = lily_img;
-            log2.SetActive(true);
+            GameObject.Find("InMaterial_LogImage2").GetComponent<logImage1>().Change_lily();
         }
         else if (numClick == 3)
         {
-            log3.GetComponent<Image>().sprite = lily_img;
-            log3.SetActive(true);
+            GameObject.Find("InMaterial_LogImage3").GetComponent<logImage1>().Change_lily();
+            choiceEnd();
         }
-        //만약 세번째 클릭이면 제공으로 이미지 버튼 변경
-        choiceEnd();
-        */
 
         //!!!여기서부터 신 코드!!!
         temp *= index_lily;
-        
     }
 
-    public void click_1st()
-    {
-
-    }
-
-    public void click_2nd()
-    {
-
-    }
-
-    public void click_3rd()
-    {
-
-    }
-
-
-    /*
     public void Onclickstock()
     {
+        numClick++;
         numstock -= 1;
         stock.text = numstock.ToString() + "개";
-        numClick += 1;
 
         if (numClick == 1)
         {
-            log1.GetComponent<Image>().sprite = stock_img;
-            log1.SetActive(true);
+            GameObject.Find("InMaterial_LogImage1").GetComponent<logImage1>().Change_stock();
         }
         else if (numClick == 2)
         {
-            log2.GetComponent<Image>().sprite = stock_img;
-            log2.SetActive(true);
+            GameObject.Find("InMaterial_LogImage2").GetComponent<logImage1>().Change_stock();
         }
         else if (numClick == 3)
         {
-            log3.GetComponent<Image>().sprite = stock_img;
-            log3.SetActive(true);
+            GameObject.Find("InMaterial_LogImage3").GetComponent<logImage1>().Change_stock();
+            choiceEnd();
         }
-        choiceEnd();
+        temp *= index_stock;
     }
-    */
-
+    
     //3번 눌러서 선택 끝났을때
     public void choiceEnd()
     {
         GameObject PlayButton = GameObject.Find("Play_Button");
 
-        if (numClick == 3)
-        {
-            Buttonlily.GetComponent<Button>().interactable = false;
-            //Buttonstock.GetComponent<Button>().interactable = false;
+        //개선할 부분: 버튼에 숫자로 태그해서 반복문 돌리기
+        Buttonlily.GetComponent<Button>().interactable = false;
+        Buttonstock.GetComponent<Button>().interactable = false;
             
-            PlayButton.GetComponent<Button>().interactable = true;    
-        }
+        PlayButton.GetComponent<Button>().interactable = true;     
     }
 
     public void OnclickRetry()
@@ -177,7 +138,7 @@ public class MakeController : MonoBehaviour
         //전부 초기화
         GameObject PlayButton = GameObject.Find("Play_Button");
         Buttonlily.GetComponent<Button>().interactable = true;
-        //Buttonstock.GetComponent<Button>().interactable = true;
+        Buttonstock.GetComponent<Button>().interactable = true;
 
         PlayButton.GetComponent<Image>().sprite = play_img;
         PlayButton.GetComponent<Button>().interactable = false;
@@ -186,11 +147,11 @@ public class MakeController : MonoBehaviour
         numlily = 9;
         numstock = 9;
         lily.text = numlily.ToString() + "개";
-        //stock.text = numlily.ToString() + "개";
+        stock.text = numlily.ToString() + "개";
 
-        log1.SetActive(false);
-        log2.SetActive(false);
-        log3.SetActive(false);
+        GameObject.Find("InMaterial_LogImage1").GetComponent<logImage1>().Change_Retry();
+        GameObject.Find("InMaterial_LogImage2").GetComponent<logImage1>().Change_Retry();
+        GameObject.Find("InMaterial_LogImage3").GetComponent<logImage1>().Change_Retry();
 
         EndBlackBox.SetActive(false);
     }
@@ -214,21 +175,20 @@ public class MakeController : MonoBehaviour
         }
     }
 
+    //어떤 약초인지 판단
     private IEnumerator EndAnimate()
     {
         yield return new WaitForSeconds(1f);
-        Debug.Log("wait");
-
-        if (numlily == 6)
+        //calculate();
+        if (temp == 8)
         {
-            StartCoroutine(LilyEnd());
-            Debug.Log("lilynum==6");
+            StartCoroutine(LilyEnd());       
         }
-        else if (numstock == 6)
+        else if (temp == 27)
         {
             StartCoroutine(StockEnd());
-            Debug.Log("stocknum==6");
         }
+        temp = 1;
     }
 
     private IEnumerator LilyEnd()
@@ -266,7 +226,8 @@ public class MakeController : MonoBehaviour
     }
 
 
-    //!!!여기서부터 신 코드!!!
+   
+    /*
     public void calculate()
     {
         if (numClick == 3)
@@ -282,6 +243,5 @@ public class MakeController : MonoBehaviour
 
         }
     }
-
+    */
 }
-

@@ -9,12 +9,13 @@ public class logImage1 : MonoBehaviour
 {
     public Sprite lily_img;
     public Sprite stock_img;
-    Image thisImg1;
+    public Sprite none_img;
+    Image thisImg;
 
     // Start is called before the first frame update
     public void Start()
     {
-        thisImg1 = GetComponent<Image>();
+        thisImg = GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -23,8 +24,19 @@ public class logImage1 : MonoBehaviour
         
     }
 
-    public void ChangeImage1()
+    public void Change_lily()
     {
-        thisImg1.sprite = stock_img;
+        thisImg.sprite = lily_img;
     }
+
+    public void Change_stock()
+    {
+        thisImg.sprite = stock_img;
+    }
+
+    public void Change_Retry()
+    {
+        thisImg.sprite = none_img;
+    }
+
 }
