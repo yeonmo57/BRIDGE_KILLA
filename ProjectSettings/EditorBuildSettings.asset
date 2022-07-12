@@ -24,10 +24,10 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/New/Main.unity
+    path: Assets/Scenes/Chapter01/Main.unity
     guid: 3f98162d8526e8648b1ae2c211ee0d39
   - enabled: 1
-    path: Assets/Scenes/New/Map.unity
+    path: Assets/Scenes/Chapter01/Map.unity
     guid: ac9c0174ff23d9547b19c8aa2551becc
   - enabled: 0
     path: 
@@ -42,16 +42,16 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/New/Make1.unity
+    path: Assets/Scenes/Chapter01/Make1.unity
     guid: 063cca6a52ff134419813b4320a3e7e4
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/New/Day1-1.unity
+    path: Assets/Scenes/Chapter01/Day1-1.unity
     guid: b38a99f694cfb0740a7591005fecfb26
   - enabled: 1
-    path: Assets/Scenes/New/Day1-2.unity
+    path: Assets/Scenes/Chapter01/Day1-2.unity
     guid: 86364bfb4ac42c84aa7f21699f5d7027
   - enabled: 0
     path: 
